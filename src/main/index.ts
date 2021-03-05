@@ -12,10 +12,11 @@ function createWindow() {
     height: 600,
     webPreferences: {
       nodeIntegration: true,
+      contextIsolation: false,
     },
   });
 
-  win.loadURL('https://webpack.js.org/configuration/target/#root');
+  win.loadURL('https://www.baidu.com');
 }
 
 app.whenReady().then(createWindow);

@@ -7,10 +7,12 @@
   "author": "caisr <383911973@qq.com>",
   "license": "MIT",
   "scripts": {
-    "watch:main": "webpack build --config ./webpack/config/main.js -w",
+    "watch:main": "node tools/reloadElectron.js",
     "build:main": "webpack build --config ./webpack/config/main.js",
+    "watch:renderer": "webpack serve --config ./webpack/config/renderer.js",
     "build:renderer": "webpack build --config ./webpack/config/renderer.js",
     "start:electron": "electron .",
+    "start": "cross-env NODE_ENV=development NODE_PORT=9527 run-p watch:main build:main watch:renderer",
     "build": "electron-builder",
     "fix": "eslint --fix src/**/*.{ts,tsx}"
   },
@@ -45,7 +47,9 @@
     "@typescript-eslint/eslint-plugin": "^4.16.1",
     "@typescript-eslint/parser": "^4.16.1",
     "babel-loader": "^8.2.2",
+    "chokidar": "^3.5.1",
     "clean-webpack-plugin": "^3.0.0",
+    "concurrently": "^6.0.0",
     "cross-env": "^7.0.3",
     "electron": "^12.0.0",
     "electron-builder": "^22.10.5",
@@ -58,10 +62,13 @@
     "fork-ts-checker-webpack-plugin": "^6.1.0",
     "html-webpack-plugin": "^5.2.0",
     "log-symbols": "^4.0.0",
+    "npm-run-all": "^4.1.5",
     "tree-kill": "^1.2.2",
     "typescript": "^4.2.2",
+    "wait-on": "^5.2.1",
     "webpack": "^5.24.2",
     "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.7.3"
   },
   "dependencies": {

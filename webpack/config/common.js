@@ -2,12 +2,11 @@
  * @Author: MADAO
  * @Date: 2021-03-04 11:20:09
  * @LastEditors: MADAO
- * @LastEditTime: 2021-03-04 15:37:52
+ * @LastEditTime: 2021-03-05 10:05:13
  * @Description: webpack 通用配置
  */
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const { join } = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   module: {
@@ -28,9 +27,6 @@ module.exports = {
       eslint: {
         files: join(__dirname, '../../src'),
       },
-    }),
-    new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: ['main.js'],
     }),
   ],
 };

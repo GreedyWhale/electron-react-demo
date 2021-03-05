@@ -2,7 +2,7 @@
  * @Author: MADAO
  * @Date: 2021-03-04 14:29:04
  * @LastEditors: MADAO
- * @LastEditTime: 2021-03-04 15:36:13
+ * @LastEditTime: 2021-03-05 10:34:24
  * @Description: 渲染进程webpack配置
  */
 
@@ -12,7 +12,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const commonConfig = require('./common');
 
-module.exports = merge({
+module.exports = merge(commonConfig, {
   mode: 'production',
   target: 'electron-renderer',
   entry: {
@@ -29,7 +29,13 @@ module.exports = merge({
       template: join(__dirname, '../../src/renderer/template/index.html'),
     }),
     new CleanWebpackPlugin({
+      verbose: true,
       cleanOnceBeforeBuildPatterns: ['**/*', '!main.js'],
     }),
   ],
-}, commonConfig);
+  devServer: {
+    contentBase: join(__dirname, '../../dist'),
+    compress: true,
+    port: process.env.NODE_PORT,
+  },
+});

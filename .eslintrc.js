@@ -2,7 +2,7 @@
  * @Author: MADAO
  * @Date: 2021-03-04 14:42:52
  * @LastEditors: MADAO
- * @LastEditTime: 2021-03-04 15:14:34
+ * @LastEditTime: 2021-03-04 16:53:20
  * @Description: eslint 设置
  */
 module.exports = {
@@ -27,6 +27,7 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
+    'no-console': 'off',
     'import/no-extraneous-dependencies': 'off',
     'linebreak-style': 'off',
     'no-use-before-define': 'off',
