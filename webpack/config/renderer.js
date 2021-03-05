@@ -2,7 +2,7 @@
  * @Author: MADAO
  * @Date: 2021-03-04 14:29:04
  * @LastEditors: MADAO
- * @LastEditTime: 2021-03-05 10:34:24
+ * @LastEditTime: 2021-03-05 11:05:37
  * @Description: 渲染进程webpack配置
  */
 
@@ -26,7 +26,7 @@ module.exports = merge(commonConfig, {
     new HtmlWebpackPlugin({
       title: 'i18n_accelerator_pc',
       filename: 'index.html',
-      template: join(__dirname, '../../src/renderer/template/index.html'),
+      template: join(__dirname, '../../src/template/index.html'),
     }),
     new CleanWebpackPlugin({
       verbose: true,

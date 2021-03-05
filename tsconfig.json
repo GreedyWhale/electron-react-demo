@@ -11,6 +11,11 @@
     "moduleResolution": "Node",
     "jsx": "react",
     "allowSyntheticDefaultImports": true,
-    "noEmit": true
+    "noEmit": true,
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    }
   }
 }

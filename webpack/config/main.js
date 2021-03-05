@@ -25,4 +25,7 @@ module.exports = merge(commonConfig, {
       cleanOnceBeforeBuildPatterns: ['main.js'],
     }),
   ],
+  node: {
+    __dirname: false,
+  },
 });

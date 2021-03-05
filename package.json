@@ -14,6 +14,7 @@
     "start:electron": "electron .",
     "start": "cross-env NODE_ENV=development NODE_PORT=9527 run-p watch:main build:main watch:renderer",
     "build": "electron-builder",
+    "dist": "cross-env NODE_ENV=production run-s build:main build:renderer build",
     "fix": "eslint --fix src/**/*.{ts,tsx}"
   },
   "build": {
@@ -55,6 +56,7 @@
     "electron-builder": "^22.10.5",
     "eslint": "^7.21.0",
     "eslint-config-airbnb": "^18.2.1",
+    "eslint-import-resolver-typescript": "^2.4.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.22.0",

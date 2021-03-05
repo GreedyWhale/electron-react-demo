@@ -5,6 +5,9 @@
  * @Description: 主进程入口
  */
 import { app, BrowserWindow } from 'electron';
+import url from 'url';
+import { join } from 'path';
+import { isDevelopment } from '@/utils/index';
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -15,8 +18,10 @@ function createWindow() {
       contextIsolation: false,
     },
   });
-
-  win.loadURL('https://www.baidu.com');
+  const pagePath = isDevelopment
+    ? `http://localhost:${process.env.NODE_PORT}`
+    : url.pathToFileURL(new URL(join(__dirname, './index.html')).href).href;
+  win.loadURL(pagePath);
 }
 
 app.whenReady().then(createWindow);
