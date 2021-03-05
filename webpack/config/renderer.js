@@ -13,7 +13,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const commonConfig = require('./common');
 
 module.exports = merge(commonConfig, {
-  mode: 'production',
   target: 'electron-renderer',
   entry: {
     index: join(__dirname, '../../src/renderer/index.tsx'),

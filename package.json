@@ -8,12 +8,13 @@
   "license": "MIT",
   "scripts": {
     "watch:main": "node tools/reloadElectron.js",
-    "build:main": "webpack build --config ./webpack/config/main.js",
     "watch:renderer": "webpack serve --config ./webpack/config/renderer.js",
+    "watch": "run-p watch:renderer watch:main",
+    "build:main": "webpack build --config ./webpack/config/main.js",
     "build:renderer": "webpack build --config ./webpack/config/renderer.js",
-    "start:electron": "electron .",
-    "start": "cross-env NODE_ENV=development NODE_PORT=9527 run-p watch:main build:main watch:renderer",
     "build": "electron-builder",
+    "start:electron": "electron .",
+    "start": "cross-env NODE_ENV=development NODE_PORT=9527 run-s build:main watch",
     "dist": "cross-env NODE_ENV=production run-s build:main build:renderer build",
     "fix": "eslint --fix src/**/*.{ts,tsx}"
   },
@@ -45,6 +46,7 @@
     "@babel/runtime": "^7.13.9",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",
+    "@types/react-router-dom": "^5.1.7",
     "@typescript-eslint/eslint-plugin": "^4.16.1",
     "@typescript-eslint/parser": "^4.16.1",
     "babel-loader": "^8.2.2",
@@ -52,6 +54,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "concurrently": "^6.0.0",
     "cross-env": "^7.0.3",
+    "css-loader": "^5.1.1",
     "electron": "^12.0.0",
     "electron-builder": "^22.10.5",
     "eslint": "^7.21.0",
@@ -64,7 +67,11 @@
     "fork-ts-checker-webpack-plugin": "^6.1.0",
     "html-webpack-plugin": "^5.2.0",
     "log-symbols": "^4.0.0",
+    "mini-css-extract-plugin": "^1.3.9",
     "npm-run-all": "^4.1.5",
+    "sass": "^1.32.8",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
     "tree-kill": "^1.2.2",
     "typescript": "^4.2.2",
     "wait-on": "^5.2.1",
@@ -75,6 +82,7 @@
   },
   "dependencies": {
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0"
   }
 }

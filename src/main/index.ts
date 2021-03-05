@@ -4,7 +4,9 @@
  * @LastEditors: MADAO
  * @Description: 主进程入口
  */
-import { app, BrowserWindow } from 'electron';
+import {
+  app, BrowserWindow,
+} from 'electron';
 import url from 'url';
 import { join } from 'path';
 import { isDevelopment } from '@/utils/index';
@@ -18,6 +20,7 @@ function createWindow() {
       contextIsolation: false,
     },
   });
+
   const pagePath = isDevelopment
     ? `http://localhost:${process.env.NODE_PORT}`
     : url.pathToFileURL(new URL(join(__dirname, './index.html')).href).href;
