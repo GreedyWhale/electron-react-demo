@@ -7,14 +7,16 @@
   "author": "caisr <383911973@qq.com>",
   "license": "MIT",
   "scripts": {
+    "encode": "electron tools/encode.js",
     "watch:main": "node tools/reloadElectron.js",
     "watch:renderer": "webpack serve --config ./webpack/config/renderer.js",
     "watch": "run-p watch:renderer watch:main",
     "build:main": "webpack build --config ./webpack/config/main.js",
     "build:renderer": "webpack build --config ./webpack/config/renderer.js",
-    "build": "electron-builder",
+    "build": "run-s encode start:electron-builder",
     "start:electron": "electron .",
     "start": "cross-env NODE_ENV=development NODE_PORT=9527 run-s build:main watch",
+    "start:electron-builder": "electron-builder",
     "dist": "cross-env NODE_ENV=production run-s build:main build:renderer build",
     "fix": "eslint --fix src/**/*.{ts,tsx}"
   },
@@ -81,6 +83,7 @@
     "webpack-merge": "^5.7.3"
   },
   "dependencies": {
+    "bytenode": "^1.1.7",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0"

@@ -2,7 +2,7 @@
  * @Author: MADAO
  * @Date: 2021-03-04 14:42:52
  * @LastEditors: MADAO
- * @LastEditTime: 2021-03-05 15:24:33
+ * @LastEditTime: 2021-03-06 10:12:00
  * @Description: eslint 设置
  */
 
@@ -46,6 +46,8 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    indent: 'off',
+    '@typescript-eslint/indent': ['error', 2],
   },
   settings: {
     'import/resolver': {

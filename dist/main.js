@@ -1,1 +1,5 @@
-(()=>{"use strict";var e={n:n=>{var r=n&&n.__esModule?()=>n.default:()=>n;return e.d(r,{a:r}),r},d:(n,r)=>{for(var o in r)e.o(r,o)&&!e.o(n,o)&&Object.defineProperty(n,o,{enumerable:!0,get:r[o]})},o:(e,n)=>Object.prototype.hasOwnProperty.call(e,n)};const n=require("electron"),r=require("url");var o=e.n(r);const t=require("path");function a(){var e=new n.BrowserWindow({width:800,height:600,webPreferences:{nodeIntegration:!0,contextIsolation:!1}}),r=o().pathToFileURL(new URL((0,t.join)(__dirname,"./index.html")).href).href;e.loadURL(r)}n.app.whenReady().then(a),n.app.on("window-all-closed",(function(){"darwin"!==process.platform&&n.app.quit()})),n.app.on("activate",(function(){0===n.BrowserWindow.getAllWindows().length&&a()}))})();
+
+      var path = require('path')
+      var bytenode = bytenode || require('bytenode')
+      require(path.join(__dirname, './', 'main.jsc'))
+    

@@ -2060,6 +2060,11 @@ builder-util@22.10.5:
     stat-mode "^1.0.0"
     temp-file "^3.3.7"
 
+bytenode@^1.1.7:
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/bytenode/-/bytenode-1.1.7.tgz#25ea64c8a427ba381e3f9c657bcfb1387587bd1c"
+  integrity sha512-3QBx5djZFpTngwtMaTkFJndlTefyUUuChz/mSjDe2fGdQ+3Q9P4kmUaJpR4hYxCIaDvMp1cB+5Jz3V2zDxTOhw==
+
 bytes@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.0.0.tgz#d32815404d689699f85a4ea4fa8755dd13a96048"
