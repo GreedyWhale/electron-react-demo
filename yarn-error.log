@@ -28,11 +28,11 @@ Trace:
 
 npm manifest: 
   {
-    "name": "i18n_accelerator_pc",
+    "name": "electron-react-demo",
     "version": "1.0.0",
     "description": "A good accelerator",
     "main": "dist/main.js",
-    "repository": "git@192.168.2.82:muggle/i18n_accelerator_pc.git",
+    "repository": "git@192.168.2.82:muggle/electron-react-demo.git",
     "author": "caisr <383911973@qq.com>",
     "license": "MIT",
     "scripts": {
@@ -45,7 +45,7 @@ npm manifest:
     },
     "build": {
       "appId": "CompanyName.ProductName.SubProduct.VersionInformation",
-      "productName": "i18n_accelerator_pc",
+      "productName": "electron-react-demo",
       "copyright": "Copyright © year ${author}",
       "directories": {
         "output": "app"

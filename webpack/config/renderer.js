@@ -23,7 +23,7 @@ module.exports = merge(commonConfig, {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'i18n_accelerator_pc',
+      title: 'electron-react-demo',
       filename: 'index.html',
       template: join(__dirname, '../../src/template/index.html'),
     }),
