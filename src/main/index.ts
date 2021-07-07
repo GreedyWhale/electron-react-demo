@@ -23,7 +23,7 @@ function createWindow() {
 
   const pagePath = isDevelopment
     ? `http://localhost:${process.env.NODE_PORT}`
-    : url.pathToFileURL(new URL(join(__dirname, './index.html')).href).href;
+    : win.loadFile(join(app.getAppPath(), '/dist/index.html'));
   win.loadURL(pagePath);
 }
 
